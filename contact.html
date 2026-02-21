@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Contact Page </title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        nav a { margin-right: 15px; text-decoration: none; color: darkblue; }
+        label { display: block; margin-top: 10px; margin-bottom: 5px; }
+        input, textarea { width: 300px; padding: 5px; }
+        input[type="submit"] { width: auto; padding: 7px 15px; margin-top: 10px; }
+        table, th, td { border: 1px solid black; border-collapse: collapse; padding: 8px; }
+        th { background-color: #f2f2f2; }
+    </style>
+</head>
+<body>
+
+
+<header>
+    <h1>Contact Us</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+    <h1>Contact Form </h1>
+    <form action="/submit_form" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required> <br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="message">Your Message:</label>
+    <textarea id="message" name="message" required></textarea><br><br>
+    
+     <input type="submit" value="Send Message">
+    </form>
+
+    <h2>Our Business Hours</h2>
+<table style="border: 1px solid black; border-collapse: collapse;">
+  <tr>
+    <th>Day</th>
+    <th>Opening Time</th>
+    <th>Closing Time</th>
+  </tr>
+
+<!-- Data Rows -->
+    <tr>
+        <td>Monday</td>
+        <td>9:00 AM</td>
+        <td>5:00 PM</td>
+    </tr>
+    <tr>
+        <td>Tuesday</td>
+        <td>9:00 AM</td>
+        <td>5:00 PM</td>
+    </tr>
+    <tr>
+        <td>Wednesday</td>
+        <td>9:00 AM</td>
+        <td>5:00 PM</td>
+    </tr>
+</table>
+</main>
+</body>
+</html>
