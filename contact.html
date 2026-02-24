@@ -4,13 +4,40 @@
     <meta charset="UTF-8">
     <title> Contact Page </title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        nav a { margin-right: 15px; text-decoration: none; color: darkblue; }
+        body { font-family: Arial, sans-serif; margin: 20px;color: rgb(20, 20, 30);
+         background: linear-gradient(to right, rgb(220, 230, 255), rgb(240, 245, 255));}
+        header {
+            background-color: rgb(25, 40, 85);
+            color: rgb(255, 255, 255);
+            padding: 15px;
+        }
+        nav a { margin-right: 15px; text-decoration: none; color:  rgb(255, 255, 255); }
+        nav a:hover {
+         text-decoration: underline;
+        }
+        .post { border: 1px solid rgb(200, 200, 200); padding: 10px; margin-bottom: 15px;color: rgb(255, 255, 255); }
+        .post label {color: rgb(20, 20, 30);}
         label { display: block; margin-top: 10px; margin-bottom: 5px; }
         input, textarea { width: 300px; padding: 5px; }
         input[type="submit"] { width: auto; padding: 7px 15px; margin-top: 10px; }
         table, th, td { border: 1px solid black; border-collapse: collapse; padding: 8px; }
-        th { background-color: #f2f2f2; }
+        th { background-color:  rgb(25, 40, 85) ;color: rgb(255, 255, 255); }
+
+        /* Flex layout for larger screens */
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+/* Make items stack vertically on small screens */
+        @media screen and (max-width: 768px) {
+            .flex-container {
+                flex-direction: column;
+                align-items: stretch; /* makes inputs full width */
+            }
+        }
     </style>
 </head>
 <body>
@@ -24,23 +51,28 @@
         <a href="contact.html">Contact</a>
     </nav>
 </header>
+<main>
 
     <h1>Contact Form </h1>
-    <form action="/submit_form" method="post">
+    <form action="/submit_form" class = "post" method="post">
+       <div class="flex-container">   
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required> <br><br>
+      </div>
 
+      <div class="flex-container">  
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required><br><br>
-
+      </div>
+      <div class="flex-container">
     <label for="message">Your Message:</label>
     <textarea id="message" name="message" required></textarea><br><br>
-    
+      </div>
      <input type="submit" value="Send Message">
     </form>
 
     <h2>Our Business Hours</h2>
-<table style="border: 1px solid black; border-collapse: collapse;">
+<table>
   <tr>
     <th>Day</th>
     <th>Opening Time</th>
