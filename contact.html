@@ -22,6 +22,22 @@
         input[type="submit"] { width: auto; padding: 7px 15px; margin-top: 10px; }
         table, th, td { border: 1px solid black; border-collapse: collapse; padding: 8px; }
         th { background-color:  rgb(25, 40, 85) ;color: rgb(255, 255, 255); }
+
+        /* Flex layout for larger screens */
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+/* Make items stack vertically on small screens */
+        @media screen and (max-width: 768px) {
+            .flex-container {
+                flex-direction: column;
+                align-items: stretch; /* makes inputs full width */
+            }
+        }
     </style>
 </head>
 <body>
@@ -39,15 +55,19 @@
 
     <h1>Contact Form </h1>
     <form action="/submit_form" class = "post" method="post">
+       <div class="flex-container">   
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" required> <br><br>
+      </div>
 
+      <div class="flex-container">  
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required><br><br>
-
+      </div>
+      <div class="flex-container">
     <label for="message">Your Message:</label>
     <textarea id="message" name="message" required></textarea><br><br>
-    
+      </div>
      <input type="submit" value="Send Message">
     </form>
 

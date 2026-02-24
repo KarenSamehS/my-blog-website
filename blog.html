@@ -35,7 +35,13 @@
             background-color: rgb(245, 245, 250);
             color: rgb(20, 20, 30);             
         }
-
+         .author-date {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
         .author {
             color: rgb(40, 40, 90); 
             font-weight: bold;
@@ -52,6 +58,26 @@
         .content a:hover {
             color: rgb(20, 60, 150);
         }
+         @media screen and (max-width: 1024px) {
+            body { margin: 15px; }
+            header, footer { padding: 12px; }
+        }
+
+        @media screen and (max-width: 768px) {
+            .author-date {
+                flex-direction: column; /* stack author & date vertically */
+                align-items: flex-start;
+                gap: 5px;
+            }
+            h1 { font-size: 1.5em; }
+            .content { padding: 12px; }
+        }
+
+        @media screen and (max-width: 480px) {
+            body { margin: 10px; }
+            h1 { font-size: 1.2em; }
+            .content { font-size: 0.9em; padding: 10px; }
+        }
     </style>
 </head>
 <body>
@@ -66,7 +92,10 @@
 </header>
 
 <main>
+    <div class="author-date">
     <p class="author">Author: Jane Doe</p>
+     <p class="date">Published: Feb 22, 2026</p>
+    </div>
     <div class="content">
         <p>This is the content of the blog post. Multimedia elements like 
         <a href="multimedia.html">images/videos</a> can be linked here.</p>
